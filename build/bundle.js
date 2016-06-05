@@ -19839,6 +19839,6 @@ var App = _react2.default.createClass({
     }
 });
 
-_react2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
+_react2.default.render(_react2.default.createElement(App, null), document.getElementById('container'));
 
 },{"react":155}]},{},[157]);
