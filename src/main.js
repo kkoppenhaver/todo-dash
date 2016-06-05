@@ -5,7 +5,7 @@ var App = React.createClass({
     render: function(){
         return(
             <div>
-                <h1>Hello Bryan</h1>
+                <h1>Hello Keanan</h1>
             </div>
         );
     }

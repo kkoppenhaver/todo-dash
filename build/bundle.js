@@ -19726,6 +19726,9 @@ var currentQueue;
 var queueIndex = -1;
 
 function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
     draining = false;
     if (currentQueue.length) {
         queue = currentQueue.concat(queue);
@@ -19830,7 +19833,7 @@ var App = _react2.default.createClass({
             _react2.default.createElement(
                 'h1',
                 null,
-                'Hello Bryan'
+                'Hello Keanan'
             )
         );
     }
