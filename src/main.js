@@ -1,22 +1,29 @@
 import React from 'react';
 window.React = React;//expose for react-devtools
 
-var CardBox = React.createClass({
-    render: function(){
-        return(
-            <div className="card-box">
-            	<h1>To-Do Dashboard</h1> 
-            	<Card title="Card1" topTask="Do something on card 1" /> 
-            	<Card title="Card2" topTask="Do something on card 2" /> 
-            	<Card title="Card3" topTask="Do something on card 3" /> 
-            	<Card title="Card4" topTask="Do something on card 4" /> 
-            </div>
-        );
-    }
-});
+class CardBox extends React.Component {
+	
+	render() {
+		let projects = [
+			{ id: 1, projectTitle: 'IBD', topTask: 'Continue to work on tickets' },
+			{ id: 2, projectTitle: 'BTC', topTask: 'Continue working on migration' }
+		]
+		
+		return(
+	    <div className="card-box">
+	    	<h1>To-Do Dashboard</h1> 
+	    	{projects.map(function(project){
+	    		return(
+	    			<Card title={project.projectTitle} topTask={project.topTask}/>
+	    		);
+	    	})}
+	    </div>
+	  );
+	}
+}
 
-var Card = React.createClass({
-	render: function(){
+class Card extends React.Component {
+	render() {
 		return(
 			<div className="card">
 				<div className="card-header">
@@ -28,6 +35,6 @@ var Card = React.createClass({
 			</div>
 		);
 	}
-})
+}
 
 React.render(<CardBox/>, document.getElementById('card-container'))

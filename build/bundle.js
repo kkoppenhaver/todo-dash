@@ -19813,64 +19813,95 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],157:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var _react = require("react");
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 window.React = _react2.default; //expose for react-devtools
 
-var CardBox = _react2.default.createClass({
-  displayName: "CardBox",
+var CardBox = function (_React$Component) {
+	_inherits(CardBox, _React$Component);
 
-  render: function render() {
-    return _react2.default.createElement(
-      "div",
-      { className: "card-box" },
-      _react2.default.createElement(
-        "h1",
-        null,
-        "To-Do Dashboard"
-      ),
-      _react2.default.createElement(Card, { title: "Card1", topTask: "Do something on card 1" }),
-      _react2.default.createElement(Card, { title: "Card2", topTask: "Do something on card 2" }),
-      _react2.default.createElement(Card, { title: "Card3", topTask: "Do something on card 3" }),
-      _react2.default.createElement(Card, { title: "Card4", topTask: "Do something on card 4" })
-    );
-  }
-});
+	function CardBox() {
+		_classCallCheck(this, CardBox);
 
-var Card = _react2.default.createClass({
-  displayName: "Card",
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(CardBox).apply(this, arguments));
+	}
 
-  render: function render() {
-    return _react2.default.createElement(
-      "div",
-      { className: "card" },
-      _react2.default.createElement(
-        "div",
-        { className: "card-header" },
-        _react2.default.createElement(
-          "h3",
-          { className: "grid-item-name" },
-          this.props.title
-        )
-      ),
-      _react2.default.createElement(
-        "div",
-        { className: "card-body" },
-        _react2.default.createElement(
-          "p",
-          { className: "grid-item-top-task" },
-          this.props.topTask
-        )
-      )
-    );
-  }
-});
+	_createClass(CardBox, [{
+		key: 'render',
+		value: function render() {
+			var projects = [{ id: 1, projectTitle: 'IBD', topTask: 'Continue to work on tickets' }, { id: 2, projectTitle: 'BTC', topTask: 'Continue working on migration' }];
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'card-box' },
+				_react2.default.createElement(
+					'h1',
+					null,
+					'To-Do Dashboard'
+				),
+				projects.map(function (project) {
+					return _react2.default.createElement(Card, { title: project.projectTitle, topTask: project.topTask });
+				})
+			);
+		}
+	}]);
+
+	return CardBox;
+}(_react2.default.Component);
+
+var Card = function (_React$Component2) {
+	_inherits(Card, _React$Component2);
+
+	function Card() {
+		_classCallCheck(this, Card);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Card).apply(this, arguments));
+	}
+
+	_createClass(Card, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'card' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'card-header' },
+					_react2.default.createElement(
+						'h3',
+						{ className: 'grid-item-name' },
+						this.props.title
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'card-body' },
+					_react2.default.createElement(
+						'p',
+						{ className: 'grid-item-top-task' },
+						this.props.topTask
+					)
+				)
+			);
+		}
+	}]);
+
+	return Card;
+}(_react2.default.Component);
 
 _react2.default.render(_react2.default.createElement(CardBox, null), document.getElementById('card-container'));
 
