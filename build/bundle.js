@@ -19843,7 +19843,7 @@ var CardBox = function (_React$Component) {
 	_createClass(CardBox, [{
 		key: 'render',
 		value: function render() {
-			var projects = [{ id: 1, projectTitle: 'IBD', topTask: 'Continue to work on tickets' }, { id: 2, projectTitle: 'BTC', topTask: 'Continue working on migration' }];
+			var projects = [{ id: 1, projectTitle: 'IBD', topTask: 'Continue to work on tickets' }, { id: 2, projectTitle: 'BTC', topTask: 'Continue working on migration' }, { id: 3, projectTitle: 'Level Up WP', topTask: 'Write welcome blog post' }, { id: 4, projectTitle: 'Photo Assistant', topTask: 'Convert ThickBox to modal' }];
 
 			return _react2.default.createElement(
 				'div',
@@ -19854,7 +19854,7 @@ var CardBox = function (_React$Component) {
 					'To-Do Dashboard'
 				),
 				projects.map(function (project) {
-					return _react2.default.createElement(Card, { title: project.projectTitle, topTask: project.topTask });
+					return _react2.default.createElement(Card, { title: project.projectTitle, topTask: project.topTask, key: project.id });
 				})
 			);
 		}

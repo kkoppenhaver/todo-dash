@@ -6,7 +6,9 @@ class CardBox extends React.Component {
 	render() {
 		let projects = [
 			{ id: 1, projectTitle: 'IBD', topTask: 'Continue to work on tickets' },
-			{ id: 2, projectTitle: 'BTC', topTask: 'Continue working on migration' }
+			{ id: 2, projectTitle: 'BTC', topTask: 'Continue working on migration' },
+			{ id: 3, projectTitle: 'Level Up WP', topTask: 'Write welcome blog post' },
+			{ id: 4, projectTitle: 'Photo Assistant', topTask: 'Convert ThickBox to modal' },
 		]
 		
 		return(
@@ -14,7 +16,7 @@ class CardBox extends React.Component {
 	    	<h1>To-Do Dashboard</h1> 
 	    	{projects.map(function(project){
 	    		return(
-	    			<Card title={project.projectTitle} topTask={project.topTask}/>
+	    			<Card title={project.projectTitle} topTask={project.topTask} key={project.id} />
 	    		);
 	    	})}
 	    </div>
