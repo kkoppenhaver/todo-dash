@@ -1,14 +1,33 @@
 import React from 'react';
 window.React = React;//expose for react-devtools
 
-var App = React.createClass({
+var CardBox = React.createClass({
     render: function(){
         return(
-            <div>
-                <h1>Hello Keanan</h1>
+            <div className="card-box">
+            	<h1>To-Do Dashboard</h1> 
+            	<Card /> 
+            	<Card /> 
+            	<Card /> 
+            	<Card /> 
             </div>
         );
     }
 });
 
-React.render(<App/>, document.getElementById('container'))
+var Card = React.createClass({
+	render: function(){
+		return(
+			<div className="card">
+				<div className="card-header">
+          <h3 className="grid-item-name">Title</h3>
+        </div>
+        <div className="card-body">
+          <p className="grid-item-top-task">Card Content</p>
+        </div>
+			</div>
+		);
+	}
+})
+
+React.render(<CardBox/>, document.getElementById('card-container'))

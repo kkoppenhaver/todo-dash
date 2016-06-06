@@ -19813,9 +19813,9 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],157:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -19823,22 +19823,55 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.React = _react2.default; //expose for react-devtools
 
-var App = _react2.default.createClass({
-    displayName: 'App',
+var CardBox = _react2.default.createClass({
+  displayName: "CardBox",
 
-    render: function render() {
-        return _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement(
-                'h1',
-                null,
-                'Hello Keanan'
-            )
-        );
-    }
+  render: function render() {
+    return _react2.default.createElement(
+      "div",
+      { className: "card-box" },
+      _react2.default.createElement(
+        "h1",
+        null,
+        "To-Do Dashboard"
+      ),
+      _react2.default.createElement(Card, null),
+      _react2.default.createElement(Card, null),
+      _react2.default.createElement(Card, null),
+      _react2.default.createElement(Card, null)
+    );
+  }
 });
 
-_react2.default.render(_react2.default.createElement(App, null), document.getElementById('container'));
+var Card = _react2.default.createClass({
+  displayName: "Card",
+
+  render: function render() {
+    return _react2.default.createElement(
+      "div",
+      { className: "card" },
+      _react2.default.createElement(
+        "div",
+        { className: "card-header" },
+        _react2.default.createElement(
+          "h3",
+          { className: "grid-item-name" },
+          "Title"
+        )
+      ),
+      _react2.default.createElement(
+        "div",
+        { className: "card-body" },
+        _react2.default.createElement(
+          "p",
+          { className: "grid-item-top-task" },
+          "Card Content"
+        )
+      )
+    );
+  }
+});
+
+_react2.default.render(_react2.default.createElement(CardBox, null), document.getElementById('card-container'));
 
 },{"react":155}]},{},[157]);

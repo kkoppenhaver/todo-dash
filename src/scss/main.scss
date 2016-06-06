@@ -1,3 +1,38 @@
-body {
-	color: red;
+$card-header: #2f3c4d;
+$card-background: #2a3440;
+
+body{
+
+	.card-box {
+		h1{
+			color: white;
+			text-align: center;
+		}
+	}
+
+	background-color: #333;
+	#card-container {
+		display: block;
+		margin: 0px auto 50px auto;
+		max-width: 1200px;
+
+		.card {
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			margin: 5px;
+			width: 24%;
+
+			.card-header{
+				background-color: $card-header;
+				padding: 5px;
+				text-align: center;
+			}
+
+			.card-body {
+				background-color: $card-background;
+				padding: 20px 10px 10px 30px;
+			}
+		}
+	}
 }
