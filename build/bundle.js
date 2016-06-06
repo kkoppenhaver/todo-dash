@@ -19835,10 +19835,10 @@ var CardBox = _react2.default.createClass({
         null,
         "To-Do Dashboard"
       ),
-      _react2.default.createElement(Card, null),
-      _react2.default.createElement(Card, null),
-      _react2.default.createElement(Card, null),
-      _react2.default.createElement(Card, null)
+      _react2.default.createElement(Card, { title: "Card1", topTask: "Do something on card 1" }),
+      _react2.default.createElement(Card, { title: "Card2", topTask: "Do something on card 2" }),
+      _react2.default.createElement(Card, { title: "Card3", topTask: "Do something on card 3" }),
+      _react2.default.createElement(Card, { title: "Card4", topTask: "Do something on card 4" })
     );
   }
 });
@@ -19856,7 +19856,7 @@ var Card = _react2.default.createClass({
         _react2.default.createElement(
           "h3",
           { className: "grid-item-name" },
-          "Title"
+          this.props.title
         )
       ),
       _react2.default.createElement(
@@ -19865,7 +19865,7 @@ var Card = _react2.default.createClass({
         _react2.default.createElement(
           "p",
           { className: "grid-item-top-task" },
-          "Card Content"
+          this.props.topTask
         )
       )
     );
