@@ -1,3 +1,14 @@
+# To-Do Dashboard
+
+A simple React app to help you keep track of your various to-do lists by only showing you the top item on each.
+
+
+
+
+
+
+Based on:
+
 # barebones-react
 
 This is a minimal set up using Browserify, the Babelify transform and React.
